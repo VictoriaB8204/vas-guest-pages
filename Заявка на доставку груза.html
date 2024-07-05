@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0218)https://sso.vas-exp.ru:8843/realms/Vas-Express/protocol/openid-connect/auth?scope=openid&response_type=code&client_id=crm&redirect_uri=https%3A%2F%2Ftest-web.vas-exp.ru%2Fcallback&state=16b3c6f21448828c2550f4ac46a3809b -->
+<html class="login-pf">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Заявка на доставку груза Vas-Express</title>
+    <link rel="icon" href="images/favicon.svg" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+    <style type="text/css" media="screen">
+        .min-v-10-em {
+            min-width: 10em;
+        }
+        .min-v-15-em {
+            min-width: 15em;
+        }
+    </style>
+</head>
+
+<body class="pb-5">
+<div class="card p-0 mx-auto mt-md-4" style="max-width: 640px;">
+    <div class="card-title border-bottom p-2 bg-light">
+        <h1 class="text-center font-weight-bold" style="font-size: 24px;">Заявка на доставку груза
+        </h1>
+    </div>
+    <div class="card-body">
+        <form action="#" method="post">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input tabindex="1" id="departure_point" class="form-control" name="departure_point" value=""
+                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Пункт отправления *"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input tabindex="2" id="destination" class="form-control" name="destination" value=""
+                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Пункт назначения *"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col min-v-10-em">
+                    <div class="form-group">
+                        <input tabindex="3" id="weight" class="form-control" name="weight" value=""
+                               type="number" min="0" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Вес, кг *"
+                        >
+                    </div>
+                </div>
+                <div class="col min-v-10-em">
+                    <div class="form-group">
+                        <input tabindex="4" id="volume" class="form-control" name="volume" value=""
+                               type="number" min="0" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Объем, м3 *"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col min-v-15-em">
+                    <div class="form-group">
+                        <input tabindex="5" id="tn_ved_code" class="form-control" name="tn_ved_code" value=""
+                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Код ТН ВЭД (при наличии)"
+                        >
+                    </div>
+                </div>
+                <div class="col min-v-15-em">
+                    <div class="form-group">
+                        <input tabindex="6" type="file" name="file-234" size="40" class="form-control form-control-file h-auto p-1"
+                               accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
+                               aria-invalid="false">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input tabindex="7" id="product_name" class="form-control" name="product_name" value=""
+                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Наименование товара (название, ссылка на сайт)"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col min-v-15-em">
+                    <div class="form-group">
+                        <input tabindex="8" id="phone" class="form-control" name="phone" value=""
+                               type="tel" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="Телефон *"
+                        >
+                    </div>
+                </div>
+                <div class="col min-v-15-em">
+                    <div class="form-group">
+                        <input tabindex="9" id="email" class="form-control" name="email" value=""
+                               type="email" autofocus="" autocomplete="off" aria-invalid=""
+                               placeholder="E-mail *"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+
+                        <textarea rows="4" tabindex="10" id="note" class="form-control" name="note" value=""
+                                  autofocus="" autocomplete="off" aria-invalid="" placeholder="Примечание"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input tabindex="11" class="btn btn-primary w-100" type="submit" value="Отправить">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-2">
+    <a href="#" class="form-group">Что-то пошло не так? Заполните форму обратной связи</a>
+</div>
+
+
+</body>
+</html>
