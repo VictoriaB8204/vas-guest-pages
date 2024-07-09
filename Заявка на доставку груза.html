@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Заявка на доставку груза Vas-Express</title>
+    <title>Vas-Express | Заявка на доставку груза</title>
     <link rel="icon" href="images/favicon.svg" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -18,6 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
     <style type="text/css" media="screen">
         .min-v-10-em {
             min-width: 10em;
@@ -26,6 +27,12 @@
             min-width: 15em;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $("#phone").mask("+7 (999) 999-99-99", {autoclear: false});
+        });
+    </script>
+
 </head>
 
 <body class="pb-5">
@@ -35,14 +42,18 @@
         </h1>
     </div>
     <div class="card-body">
-        <form action="#" method="post">
+        <form action="#" method="post" class="needs-validation">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <input tabindex="1" id="departure_point" class="form-control" name="departure_point" value=""
-                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="1" autofocus="" autocomplete="off"
+                               name="departure_from" id="departure_from" type="text" required
+                               class="form-control"
                                placeholder="Пункт отправления *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, заполните это поле.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,10 +61,14 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <input tabindex="2" id="destination" class="form-control" name="destination" value=""
-                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="2" autofocus="" autocomplete="off"
+                               name="destination" id="destination" type="text" required
+                               class="form-control"
                                placeholder="Пункт назначения *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, заполните это поле.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,36 +76,46 @@
             <div class="form-row">
                 <div class="col min-v-10-em">
                     <div class="form-group">
-                        <input tabindex="3" id="weight" class="form-control" name="weight" value=""
-                               type="number" min="0" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="3" autofocus="" autocomplete="off"
+                               name="weight" id="weight" type="number" min="0" max="1000000" step="0.01" required
+                               class="form-control"
                                placeholder="Вес, кг *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите вес груза.
+                        </div>
                     </div>
                 </div>
                 <div class="col min-v-10-em">
                     <div class="form-group">
-                        <input tabindex="4" id="volume" class="form-control" name="volume" value=""
-                               type="number" min="0" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="4" autofocus="" autocomplete="off"
+                               name="volume" id="volume" type="number" min="0" max="1000000" step="0.01" required
+                               class="form-control"
                                placeholder="Объем, м3 *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите объем груза.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-row align-items-center">
+            <div class="form-row">
                 <div class="col min-v-15-em">
                     <div class="form-group">
-                        <input tabindex="5" id="tn_ved_code" class="form-control" name="tn_ved_code" value=""
-                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="5" autofocus="" autocomplete="off"
+                               name="tn_ved_code" id="tn_ved_code" type="text"
+                               class="form-control"
                                placeholder="Код ТН ВЭД (при наличии)"
                         >
                     </div>
                 </div>
                 <div class="col min-v-15-em">
                     <div class="form-group">
-                        <input tabindex="6" type="file" name="file-234" size="40" class="form-control form-control-file h-auto p-1"
+                        <input tabindex="6" name="file" type="file" size="40"
+                               class="form-control form-control-file h-auto p-1"
                                accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
-                               aria-invalid="false">
+                        >
                     </div>
                 </div>
             </div>
@@ -98,29 +123,39 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <input tabindex="7" id="product_name" class="form-control" name="product_name" value=""
-                               type="text" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="7" autofocus="" autocomplete="off"
+                               name="product_name" id="product_name" type="text"
+                               class="form-control"
                                placeholder="Наименование товара (название, ссылка на сайт)"
                         >
                     </div>
                 </div>
             </div>
 
-            <div class="form-row align-items-center">
+            <div class="form-row">
                 <div class="col min-v-15-em">
                     <div class="form-group">
-                        <input tabindex="8" id="phone" class="form-control" name="phone" value=""
-                               type="tel" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="8" autofocus="" autocomplete="off"
+                               name="phone" id="phone" type="tel" minlength="18" maxlength="18" required
+                               pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+                               class="form-control"
                                placeholder="Телефон *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите Ваш номер телефона в формате +7 (123) 456-78-91.
+                        </div>
                     </div>
                 </div>
                 <div class="col min-v-15-em">
                     <div class="form-group">
-                        <input tabindex="9" id="email" class="form-control" name="email" value=""
-                               type="email" autofocus="" autocomplete="off" aria-invalid=""
+                        <input tabindex="9" autofocus="" autocomplete="off"
+                               name="email" id="email" type="email" required
+                               class="form-control"
                                placeholder="E-mail *"
                         >
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите Ваш e-mail.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,9 +163,10 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-
-                        <textarea rows="4" tabindex="10" id="note" class="form-control" name="note" value=""
-                                  autofocus="" autocomplete="off" aria-invalid="" placeholder="Примечание"
+                        <textarea tabindex="10" autofocus="" autocomplete="off"
+                                  name="note" id="note" rows="4"
+                                  class="form-control"
+                                  placeholder="Примечание"
                         ></textarea>
                     </div>
                 </div>
@@ -138,7 +174,10 @@
 
             <div class="form-row">
                 <div class="col">
-                    <input tabindex="11" class="btn btn-primary w-100" type="submit" value="Отправить">
+                    <input tabindex="11" type="submit" class="btn btn-primary w-100"
+                           onclick="$('.needs-validation').addClass('was-validated')"
+                           value="Отправить"
+                    >
                 </div>
             </div>
 
