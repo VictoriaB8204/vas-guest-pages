@@ -47,7 +47,7 @@
                 <div class="col">
                     <div class="form-group">
                         <input tabindex="1" autofocus="" autocomplete="off"
-                               name="departure_from" id="departure_from" type="text" required
+                               name="departure_from" id="departure_from" type="text" required maxlength="250"
                                class="form-control"
                                placeholder="Пункт отправления *"
                         >
@@ -62,7 +62,7 @@
                 <div class="col">
                     <div class="form-group">
                         <input tabindex="2" autofocus="" autocomplete="off"
-                               name="destination" id="destination" type="text" required
+                               name="destination" id="destination" type="text" required maxlength="250"
                                class="form-control"
                                placeholder="Пункт назначения *"
                         >
@@ -104,7 +104,7 @@
                 <div class="col min-v-15-em">
                     <div class="form-group">
                         <input tabindex="5" autofocus="" autocomplete="off"
-                               name="tn_ved_code" id="tn_ved_code" type="text"
+                               name="tn_ved_code" id="tn_ved_code" type="text" maxlength="250"
                                class="form-control"
                                placeholder="Код ТН ВЭД (при наличии)"
                         >
@@ -112,7 +112,7 @@
                 </div>
                 <div class="col min-v-15-em">
                     <div class="form-group">
-                        <input tabindex="6" name="file" type="file" size="40"
+                        <input tabindex="6" name="file" type="file"
                                class="form-control form-control-file h-auto p-1"
                                accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
                         >
@@ -124,7 +124,7 @@
                 <div class="col">
                     <div class="form-group">
                         <input tabindex="7" autofocus="" autocomplete="off"
-                               name="product_name" id="product_name" type="text"
+                               name="product_name" id="product_name" type="text" maxlength="250"
                                class="form-control"
                                placeholder="Наименование товара (название, ссылка на сайт)"
                         >
@@ -149,7 +149,7 @@
                 <div class="col min-v-15-em">
                     <div class="form-group">
                         <input tabindex="9" autofocus="" autocomplete="off"
-                               name="email" id="email" type="email" required
+                               name="email" id="email" type="email" required maxlength="250"
                                class="form-control"
                                placeholder="E-mail *"
                         >
@@ -164,7 +164,7 @@
                 <div class="col">
                     <div class="form-group">
                         <textarea tabindex="10" autofocus="" autocomplete="off"
-                                  name="note" id="note" rows="4"
+                                  name="note" id="note" rows="4" maxlength="1000"
                                   class="form-control"
                                   placeholder="Примечание"
                         ></textarea>
